@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الحانة نتفلكس | Alhana Netflix</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #111; color: white; }
+    .movie:hover { transform: scale(1.05); transition: 0.3s; }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- Logo and Header -->
+  <header class="bg-red-700 p-4 text-white flex justify-between items-center">
+    <div class="flex items-center space-x-2 space-x-reverse">
+      <img src="https://via.placeholder.com/40x40/ff0000/ffffff?text=🍷" alt="Logo" class="rounded-full">
+      <span class="text-2xl font-bold">الحانة نتفلكس | Alhana Netflix</span>
+    </div>
+    <a href="#login" class="text-white underline hover:text-gray-300 text-sm">تسجيل الدخول | Login</a>
+  </header>  <!-- Login Section -->  <section id="login" class="p-6 max-w-md mx-auto mt-6 bg-gray-900 rounded-lg">
+    <h2 class="text-xl mb-4 text-center font-bold">تسجيل الدخول | Login</h2>
+    <form onsubmit="alert('تم تسجيل الدخول (وهمي) | Fake login complete'); return false;">
+      <label class="block mb-2">البريد الإلكتروني | Email</label>
+      <input type="email" class="w-full p-2 rounded bg-gray-800 text-white mb-4" required><label class="block mb-2">كلمة المرور | Password</label>
+  <input type="password" class="w-full p-2 rounded bg-gray-800 text-white mb-4" required>
+
+  <button type="submit" class="bg-red-700 w-full py-2 rounded hover:bg-red-800">دخول | Login</button>
+</form>
+
+  </section>  <!-- Movie Grid -->  <main class="p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div class="movie cursor-pointer" onclick="showMessage()">
+      <img src="https://via.placeholder.com/300x450/ff0000/ffffff?text=فيلم+1" alt="Movie 1" class="rounded-lg">
+      <p class="text-center mt-2">فيلم 1<br><span class="text-sm text-gray-400">Movie 1</span></p>
+    </div><div class="movie cursor-pointer" onclick="showMessage()">
+  <img src="https://via.placeholder.com/300x450/ff0000/ffffff?text=فيلم+2" alt="Movie 2" class="rounded-lg">
+  <p class="text-center mt-2">فيلم 2<br><span class="text-sm text-gray-400">Movie 2</span></p>
+</div>
+
+<div class="movie cursor-pointer" onclick="showMessage()">
+  <img src="https://via.placeholder.com/300x450/ff0000/ffffff?text=فيلم+3" alt="Movie 3" class="rounded-lg">
+  <p class="text-center mt-2">فيلم 3<br><span class="text-sm text-gray-400">Movie 3</span></p>
+</div>
+
+  </main>  <!-- Not Available Message -->  <div id="messageBox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <div class="bg-red-700 text-white p-6 rounded-lg text-center">
+      <p class="text-xl mb-4">❌ غير متوفر حاليا<br>Not available yet</p>
+      <button onclick="closeMessage()" class="bg-black px-4 py-2 rounded">إغلاق | Close</button>
+    </div>
+  </div>  <script>
+    function showMessage() {
+      document.getElementById('messageBox').classList.remove('hidden');
+    }
+    function closeMessage() {
+      document.getElementById('messageBox').classList.add('hidden');
+    }
+  </script></body>
+</html>
